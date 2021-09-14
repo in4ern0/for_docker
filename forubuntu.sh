@@ -8,10 +8,10 @@ sudo apt update -y
 apt-cache policy docker-ce
 sudo apt install docker-ce -y
 sudo systemctl enable --now docker
-sudo systemctl status docker
 sudo curl -L https://github.com/docker/compose/releases/download/1.27.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+sudo systemctl status docker
 
 
 
@@ -25,7 +25,7 @@ sudo apt update -y
 apt-cache policy docker-ce
 sudo apt install docker-ce -y
 sudo systemctl enable --now docker
-sudo systemctl status docker
 sudo curl -L https://github.com/docker/compose/releases/download/1.27.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+sudo systemctl status docker
