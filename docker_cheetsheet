@@ -5,7 +5,7 @@ docker stop <container name or id >
 docker start <container name or id >
 docker top  <container name or id > - ishleyen processleri gosterir
 docker stats [-a] <container name or id > - ne qeder CPU RAM isheldir
-docker inspect <container name or id > - container ichine baxirsan
+docker inspect <container name or id > - it shows container details 
 docker ps -a
 docker images
 docker rmi -f $(docker images -qa)
@@ -22,6 +22,11 @@ docker run -it --name nginx2 nginx bash - bash ile qoshulursan ichine (exit eden
 docker start -ai <container name or id > - bashlayan kimi containerin ichinden bashlayacaq
 docker exec -it <container name or id > bash (sh) - containere daxil olmaq.
 
+docker run ubuntu cat /etc/*release* - it will just show you command's result
+docker attach ubuntu - it'll run container foreground (opposite -d command) 
+
+
+
 **************************************************************************************************
 4. Docker Network
 **************************************************************************************************
@@ -32,7 +37,9 @@ docker network disconnect
 docker network create 
 docker network create --driver
 docker run -d --network-alias search elasticsearch:2
+docker run -p 80:5000 webapp               -----------------> first port 80 host the second port 5000 for docker
 ****************************************************************************************************
+docker run -v /opt/datadir:/var/lib/mysql mysql  - /opt/datadir - HOST and /var/lib/mysql - DOCKER CONTAINER
 docker image history elasticsearch:2 - history
 docker image inspect centos:latest
 docker cp gravitee.mongodb:/bckp /tmp/ - cp from container to host
@@ -42,3 +49,4 @@ docker save -o /home/matrix/matrix-data.tar matrix-data
 docker load -i <path to copied image file>
 ****************************************************************************************************
 docker logs -f lopving_torvalds
+
