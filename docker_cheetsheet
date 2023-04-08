@@ -15,7 +15,7 @@ docker system prune ( --all)
 docker container prune - remove all stoped containers
 
 docker run -p 8080:80 --name webserver -d httpd  (8080 - HOST)
-docker run -p 3306:3306 --name db1 -e MYSQL_RANDOM_ROOT_PASSWORD=yes -d mysql
+docker run -p 3306:3306 --name db1 -e MYSQL_RANDOM_ROOT_PASSWORD=yes -d mysql. ## -e MYSQL_RANDOM_ROOT_PASSWORD=yes - env variable
 docker run -p 3306:3306 --name db2 -e MYSQL_ROOT_PASSWORD=password -d mysql
 curl localhost:8080 - test it
 docker run -it --name nginx2 nginx bash - bash ile qoshulursan ichine (exit eden de stop olacaq)
@@ -25,7 +25,7 @@ docker exec -it <container name or id > bash (sh) - containere daxil olmaq.
 docker run ubuntu cat /etc/*release* - it will just show you command's result
 docker attach ubuntu - it'll run container foreground (opposite -d command) 
 
-
+docker run ubuntu-sleeper 
 
 **************************************************************************************************
 4. Docker Network
@@ -49,4 +49,12 @@ docker save -o /home/matrix/matrix-data.tar matrix-data
 docker load -i <path to copied image file>
 ****************************************************************************************************
 docker logs -f lopving_torvalds
+docker run -d -p 5000:80 --link redis:redis voteap.  - linked redis to voteapp
+docker run -d --name db -e POSTGRES_USER="postgres" -e POSTGRES_PASSWORD="postgres" postgres:15-alpine
+docker run -d -p 5000:80 --link redis:redis voteapp
+docker run -d --link redis:redis --link db:db workerapp
+docker run -d -p 5001:80 --link db:db resultapp
+
+
+
 
