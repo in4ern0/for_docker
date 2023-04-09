@@ -38,6 +38,8 @@ docker run -d --link redis:redis --link db:db workerapp
 docker run -d -p 5001:80 --link db:db resultapp
 
 **************************************************************************************************
+docker build . -t mywebapp 
+
 FROM ubuntu
 ENTRYPOINT ["sleep"]
 CMD ["5"]
