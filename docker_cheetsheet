@@ -82,4 +82,6 @@ docker run -v /opt/datadir:/var/lib/mysql mysql  - /opt/datadir - HOST and /var/
 
 docker run -v data_volume:/var/lib/mysql mysql.  - it will create automatic directory on /var/lib/docker/volumes/data_volume
 
+docker run -d --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql - same logic HOST=source DOCKER=target
+
 
