@@ -106,6 +106,9 @@ docker run -d --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql -
 docker swarm init --advertise-addr 192.168.19.101
 docker swarm join --token SWMTKN-1-4vn1zgl6ena8cqq6hu9909f2018ch80iu3nlozyoactksrbul5-bczd1y7uehe7uovpcscifcfx7 172.16.68.131:2377
 docker node ls 
+docker swarm leave
+docker node rm <node-name> - on master
+docker swarm join-token manager - get TOKEN for join
 
 
 
