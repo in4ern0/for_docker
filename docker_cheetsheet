@@ -57,7 +57,7 @@ docker run -d --network-alias search elasticsearch:2
 docker run -p 80:5000 webapp               -----------------> first port 80 host the second port 5000 for docker
 
 **************************************************************************************************
-4. Docker Image pull&push img to DockerHUB
+4. Docker Registry
 **************************************************************************************************
 docker image history elasticsearch:2 - history
 docker image inspect centos:latest
