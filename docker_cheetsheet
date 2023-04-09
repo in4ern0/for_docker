@@ -98,8 +98,6 @@ docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jen
 
 docker run -d --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql - same logic HOST=source DOCKER=target
 
-
-
 **************************************************************************************************
 4. Docker SWARM
 **************************************************************************************************
