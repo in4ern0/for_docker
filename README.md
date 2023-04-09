@@ -23,4 +23,4 @@
 * ``` docker-compose --version ```
 
 * https://docs.docker.com/compose/install/ - check docker-compose latest version 
-$ pip3 install --upgrade --force-reinstall --no-cache-dir docker-compose && ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
+* pip3 install --upgrade --force-reinstall --no-cache-dir docker-compose && ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
