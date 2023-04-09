@@ -17,7 +17,8 @@ docker rmi -f $(docker images -qa)
 docker rm -f $(docker ps -qa)
 docker system prune -a --volumes
 docker system prune ( --all)
-docker container prune - remove all stoped containers
+docker image prune -a - remove all STOPED containers images
+docker container prune - remove all STOPED containers
 docker run -p 8080:80 --name webserver -d httpd  (8080 - HOST)
 docker run -p 3306:3306 --name db1 -e MYSQL_RANDOM_ROOT_PASSWORD=yes -d mysql. ## -e MYSQL_RANDOM_ROOT_PASSWORD=yes - env variable
 docker run -p 3306:3306 --name db2 -e MYSQL_ROOT_PASSWORD=password -d mysql
@@ -66,6 +67,7 @@ docker run -d -e MYSQL_ROOT_PASSWORD=db_pass123 --name mysql-db --network wp-mys
 
 docker run --network=wp-mysql-network -e DB_Host=mysql-db -e DB_Password=db_pass123 -p 38080:8080 --name webapp --link mysql-db:mysql-db -d kodekloud/simple-webapp-mysql
 
+
 **************************************************************************************************
 4. Docker Registry
 **************************************************************************************************
@@ -76,6 +78,10 @@ docker commit gravitee.mongodb mongo:ilkin
 docker save mongo:ilkin > mongoilkin.tar
 docker save -o /home/matrix/matrix-data.tar matrix-data
 docker load -i <path to copied image file>
+docker pull nginx:latest
+docker image tag nginx:latest localhost:5000/nginx:latest
+docker push localhost:5000/nginx:latest
+
 
 **************************************************************************************************
 4. Docker Engine
@@ -88,6 +94,8 @@ docker run --memory=100m ubuntu
 **************************************************************************************************
 docker run -v /opt/datadir:/var/lib/mysql mysql  - /opt/datadir - HOST and /var/lib/mysql - DOCKER CONTAINER
 docker run -v data_volume:/var/lib/mysql mysql.  - it will create automatic directory on /var/lib/docker/volumes/data_volume
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins
+
 docker run -d --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql - same logic HOST=source DOCKER=target
 
 
