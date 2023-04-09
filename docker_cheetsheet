@@ -112,6 +112,9 @@ docker node promote <node-name> - promote to MASTER
 docker swarm init --force-new-cluster --advertise-addr 192.168.19.101 
 docker service create --replicas=10 -p 8080:8080 --network network-name mysql:5.4
 docker service create --mode global my-monitoring-agent
+docker service create --replicas=10  --name web-server nginx - automaticly added number web-server1,2,3 to avoid duplitaces
+docker service update --replicas=5 nginx
+
 
 
 
