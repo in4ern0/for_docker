@@ -4,10 +4,16 @@ service:
     image: redis
     deploy:
       replicas: 1
+      resources:
+        cpus: 0.01
+        memory: 50M
   db:
     image: postgres: 9.4
     deploy:
-      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == node1
+          - node.role == manager      
   webapp:
     image: voting-app
     deploy:
