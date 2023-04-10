@@ -81,6 +81,10 @@ docker pull nginx:latest
 docker image tag nginx:latest localhost:5000/nginx:latest
 docker push localhost:5000/nginx:latest
 
+**************************************************************************************************
+$ docker run -d -p 5000:5000 --restart always --name registry registry:2
+**************************************************************************************************
+
 
 **************************************************************************************************
 4. Docker Engine
