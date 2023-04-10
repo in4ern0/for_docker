@@ -112,10 +112,12 @@ docker swarm init --force-new-cluster --advertise-addr 192.168.19.101
 docker service create --replicas=10 -p 8080:8080 --network network-name mysql:5.4
 docker service create --mode global my-monitoring-agent
 docker service create --replicas=10  --name web-server nginx - automaticly added number web-server1,2,3 to avoid duplitaces
-docker service update --replicas=5 nginx
+docker service update --replicas=5 simple-web-app
+docker service create --replicas=3 -e APP_COLOR=pink -p 8083:8080 --name simple-web-app kodekloud/webapp-color 
 
 docker network create --driver overlay --subnet 10.0.9.0/24 my-overlay-network
 docker service create --replicas=10 --network my-overlay-network --name web-server nginx ----> to attach network my-overlay-network
+
 
 
 
