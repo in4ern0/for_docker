@@ -83,6 +83,8 @@ docker push localhost:5000/nginx:latest
 
 **************************************************************************************************
 $ docker run -d -p 5000:5000 --restart always --name registry registry:2 ----> to create own REGISTRY
+into container you can show your pushed images --->> ls /var/lib/registry/docker/registry/v2/repositories
+
 **************************************************************************************************
 
 
