@@ -1,0 +1,22 @@
+version: 3
+service:
+  redis:
+    image: redis
+    deploy:
+      replicas: 1
+  db:
+    image: postgres: 9.4
+    deploy:
+      replicas: 1
+  webapp:
+    image: voting-app
+    deploy:
+      replicas: 2
+  result:
+    image: result
+    deploy:
+      replicas: 2
+  worker:
+    image: worker
+    deploy:
+      replicas: 3
