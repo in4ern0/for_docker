@@ -116,13 +116,13 @@ docker run -d --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql -
 **************************************************************************************************
 docker swarm init --advertise-addr 192.168.19.101
 docker swarm join --token SWMTKN-1-4vn1zgl6ena8cqq6hu9909f2018ch80iu3nlozyoactksrbul5 172.16.68.131:2377
-docker node ls 
 docker swarm leave
-docker node rm <node-name> - on master
 docker swarm join-token manager - get TOKEN for join
 docker swarm join-token worker
-docker node promote <node-name> - promote to MASTER
 docker swarm init --force-new-cluster --advertise-addr 192.168.19.101 
+docker node ls 
+docker node rm <node-name> - on master
+docker node promote <node-name> - promote to MASTER
 docker service create --replicas=10 -p 8080:8080 --network network-name mysql:5.4
 docker service create --mode global my-monitoring-agent
 docker service create --replicas=10  --name web-server nginx - automaticly added number web-server1,2,3 to avoid duplitaces
